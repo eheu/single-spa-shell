@@ -6,12 +6,15 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
 const config = ({ mode }) => {
   return {
     mode: mode,
+    
     entry: "./src/main.js",
+
     output: {
       path: __dirname + "/build/",
       filename: "main.js",
-      publicPath: "http://localhost:3001/",
+      publicPath: "http://localhost:3000/",
     },
+
     module: {
       rules: [
         {
