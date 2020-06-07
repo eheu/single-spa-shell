@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npx webpack --env.mode development",
+    "serve": "npx serve build -l 3000",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "npx onchange \"src/**/*\" -- npm run build"
   },
   "keywords": [],
   "author": "",
@@ -12,7 +15,12 @@
   "devDependencies": {
     "@babel/preset-env": "^7.10.2",
     "babel": "^6.23.0",
-    "webpack": "^5.0.0-beta.17",
+    "html-webpack-plugin": "^4.3.0",
+    "webpack": "^5.0.0-beta.16",
     "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "single-spa": "^5.5.3",
+    "single-spa-html": "^1.1.2"
   }
 }

@@ -6,7 +6,7 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
 const config = ({ mode }) => {
   return {
     mode: mode,
-    
+
     entry: "./src/main.js",
 
     output: {
@@ -17,20 +17,20 @@ const config = ({ mode }) => {
 
     module: {
       rules: [
-        {
-          test: /\.m?js$/,
-          use: {
-            loader: "babel-loader",
-          },
-        },
-        {
-          test: /\.css$/i,
-          use: ["to-string-loader", "css-loader"],
-        },
-        {
-          test: /\.html$/i,
-          loader: 'html-loader',
-        },
+        // {
+        //   test: /\.m?js$/,
+        //   use: {
+        //     loader: "babel-loader",
+        //   },
+        // },
+        // {
+        //   test: /\.css$/i,
+        //   use: ["to-string-loader", "css-loader"],
+        // },
+        // {
+        //   test: /\.html$/i,
+        //   loader: 'html-loader',
+        // },
       ],
     },
     plugins: [
@@ -43,9 +43,9 @@ const config = ({ mode }) => {
         filename: "remoteEntry.js",
         library: { type: "var", name: "h-single-spa" },
         remotes: {
-            hCounter: "hCounter"
+            webComponents: "webComponents"
         },
-        exposes: {
+        exposes: {  
         },
       }),
     ],
