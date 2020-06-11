@@ -1,9 +1,8 @@
 import { registerApplication } from "single-spa";
-
-import("webComponents/WebCounter");
+import { webCounterLifecycles } from "./web-counter";
 
 registerApplication(
   "web-counter",
-  () => import("./web-counter"),
-  (location) => location.pathname.startsWith("/")
+  webCounterLifecycles,
+  (location) => location.pathname.startsWith("/web") || location.pathname.startsWith("/both")
 );

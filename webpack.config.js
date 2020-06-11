@@ -14,25 +14,6 @@ const config = ({ mode }) => {
       filename: "main.js",
       publicPath: "http://localhost:3000/",
     },
-
-    module: {
-      rules: [
-        // {
-        //   test: /\.m?js$/,
-        //   use: {
-        //     loader: "babel-loader",
-        //   },
-        // },
-        // {
-        //   test: /\.css$/i,
-        //   use: ["to-string-loader", "css-loader"],
-        // },
-        // {
-        //   test: /\.html$/i,
-        //   loader: 'html-loader',
-        // },
-      ],
-    },
     plugins: [
       new HtmlWebpackPlugin({
         template: "./src/main.html",
@@ -43,10 +24,11 @@ const config = ({ mode }) => {
         filename: "remoteEntry.js",
         library: { type: "var", name: "h-single-spa" },
         remotes: {
-            webComponents: "webComponents"
+          webComponents: "webComponents",
+          reactComponents: "reactComponents",
         },
-        exposes: {  
-        },
+        exposes: {},
+        shared: ["react", "react-dom"],
       }),
     ],
   };

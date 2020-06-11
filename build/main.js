@@ -61,7 +61,20 @@ eval("/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harm
 /*! runtime requirements: __webpack_require__, __webpack_require__.e, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) => {
 
-eval("/* harmony import */ var single_spa__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! single-spa */ \"./node_modules/single-spa/lib/esm/single-spa.min.js\");\n\r\n\r\n__webpack_require__.e(/*! import() */ \"src_components_index_js\").then(__webpack_require__.bind(__webpack_require__, /*! ./components */ \"./src/components/index.js\"))\r\n\r\nObject(single_spa__WEBPACK_IMPORTED_MODULE_0__.start)();\n\n//# sourceURL=webpack://hovedopgave-single-spa/./src/main.js?");
+eval("/* harmony import */ var single_spa__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! single-spa */ \"./node_modules/single-spa/lib/esm/single-spa.min.js\");\n\r\n\r\nPromise.all(/*! import() */[__webpack_require__.e(\"vendors-node_modules_react-dom_index_js-node_modules_single-spa-html_lib_single-spa-html_js-n-b46fea\"), __webpack_require__.e(\"src_components_index_js\")]).then(__webpack_require__.bind(__webpack_require__, /*! ./components */ \"./src/components/index.js\"))\r\n\r\nObject(single_spa__WEBPACK_IMPORTED_MODULE_0__.start)();\n\n//# sourceURL=webpack://hovedopgave-single-spa/./src/main.js?");
+
+/***/ }),
+
+/***/ "webpack/container/reference/reactComponents":
+/*!**********************************!*\
+  !*** external "reactComponents" ***!
+  \**********************************/
+/*! unknown exports (runtime-defined) */
+/*! exports [maybe provided (runtime-defined)] [maybe used (runtime-defined)] */
+/*! runtime requirements: module */
+/***/ ((module) => {
+
+eval("module.exports = reactComponents;\n\n//# sourceURL=webpack://hovedopgave-single-spa/external_%22reactComponents%22?");
 
 /***/ }),
 
@@ -78,16 +91,16 @@ eval("module.exports = webComponents;\n\n//# sourceURL=webpack://hovedopgave-sin
 
 /***/ }),
 
-/***/ "webpack/container/remote-overrides/empty":
-/*!*************************!*\
-  !*** remote overrides  ***!
-  \*************************/
+/***/ "webpack/container/remote-overrides/a46c3e":
+/*!*************************************************************!*\
+  !*** remote overrides react = react, react-dom = react-dom ***!
+  \*************************************************************/
 /*! unknown exports (runtime-defined) */
 /*! exports [maybe provided (runtime-defined)] [maybe used (runtime-defined)] */
-/*! runtime requirements: module */
-/***/ ((module) => {
+/*! runtime requirements: module, __webpack_require__ */
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("module.exports = (external) => {\n\tif(external.override) external.override(__webpack_require__.O);\n\treturn external;\n};\n\n//# sourceURL=webpack://hovedopgave-single-spa/remote_overrides_?");
+eval("module.exports = (external) => {\n\tif(external.override) external.override(Object.assign({\n\t\t\"react\": () => {\n\t\t\treturn Promise.resolve().then(() => {\n\t\t\t\treturn () => __webpack_require__(/*! react */ \"./node_modules/react/index.js\")\n\t\t\t})\n\t\t},\n\t\t\"react-dom\": () => {\n\t\t\treturn Promise.resolve().then(() => {\n\t\t\t\treturn () => __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\")\n\t\t\t})\n\t\t}\n\t}, __webpack_require__.O));\n\treturn external;\n};\n\n//# sourceURL=webpack://hovedopgave-single-spa/remote_overrides_react_=_react,_react-dom_=_react-dom?");
 
 /***/ })
 
@@ -226,13 +239,21 @@ eval("module.exports = (external) => {\n\tif(external.override) external.overrid
 /******/ 	(() => {
 /******/ 		var installedModules = {};
 /******/ 		var chunkMapping = {
+/******/ 			"src_components_index_js": [
+/******/ 				"webpack/container/remote/reactComponents/ReactCounter"
+/******/ 			],
 /******/ 			"webpack_container_remote_webComponents_WebCounter": [
 /******/ 				"webpack/container/remote/webComponents/WebCounter"
 /******/ 			]
 /******/ 		};
 /******/ 		var idToExternalAndNameMapping = {
+/******/ 			"webpack/container/remote/reactComponents/ReactCounter": [
+/******/ 				"webpack/container/remote-overrides/a46c3e",
+/******/ 				"webpack/container/reference/reactComponents",
+/******/ 				"ReactCounter"
+/******/ 			],
 /******/ 			"webpack/container/remote/webComponents/WebCounter": [
-/******/ 				"webpack/container/remote-overrides/empty",
+/******/ 				"webpack/container/remote-overrides/a46c3e",
 /******/ 				"webpack/container/reference/webComponents",
 /******/ 				"WebCounter"
 /******/ 			]

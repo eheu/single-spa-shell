@@ -1,8 +1,14 @@
 <head>
-  <script src="http://localhost:3001/remoteEntry.js"></script>
+  <!-- react components -->
+  <script src="http://localhost:3002/remoteEntry.js"></script> 
+  <!-- web components -->
+  <script src="http://localhost:3001/remoteEntry.js"></script> 
 </head>
 <body>
-  <!-- <web-counter></web-counter> -->
+  <a href="#" onclick="window.history.pushState({}, '/web', window.location.origin + '/web')">Web Component</a>
+  <a href="#" onclick="window.history.pushState({}, '/react', window.location.origin + '/react')">React</a>
+  <a href="#" onclick="window.history.pushState({}, '/both', window.location.origin + '/both')">Both</a>  <!-- <web-counter></web-counter> -->
   <div id="single-spa-application:web-counter"></div>
+  <div id="single-spa-application:react-counter"></div>
 </body>
 
